@@ -1,0 +1,14 @@
+﻿@model List<TSG_Blog.Models.Post>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>THIS IS MAIN BLOG PAGE</p>
+
+@foreach (var x in Model)
+{
+    <p>@x.Title</p>
+}
