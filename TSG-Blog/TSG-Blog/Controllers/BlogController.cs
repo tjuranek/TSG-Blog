@@ -14,7 +14,7 @@ namespace TSG_Blog.Controllers
         {
             var db = ApplicationDbContext.Create();
 
-            return View(db.Posts.ToList());
+            return View(db.Posts.OrderByDescending(p => p.Date).ToList());
         }
 
         // GET: Create Post
@@ -36,7 +36,7 @@ namespace TSG_Blog.Controllers
             db.Posts.Add(post);
             db.SaveChanges();
 
-            return View("Index", db.Posts.ToList());
+            return RedirectToAction("Index", db.Posts.OrderByDescending(p => p.Date).ToList());
         }
     }
 }
