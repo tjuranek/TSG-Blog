@@ -1,0 +1,25 @@
+﻿@model TSG_Blog.Models.Post
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create Post:</h2>
+
+@Html.ValidationSummary()
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(p => p.Title)
+    <br />
+    @Html.TextBoxFor(p => p.Title)
+    <br />
+
+    @Html.LabelFor(p => p.Content)
+    <br />
+    @Html.TextAreaFor(p => p.Content)
+
+    <p>
+        <button type="submit">Create Post</button>
+    </p>
+}
