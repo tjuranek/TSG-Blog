@@ -18,6 +18,8 @@ namespace TSG_Blog.Controllers
         }
 
         // GET: Create Post
+        [HttpGet]
+        [Authorize(Users = "author@blog.com")]
         public ActionResult Create()
         {
             return View();
@@ -25,6 +27,7 @@ namespace TSG_Blog.Controllers
 
         // POST: Create Post Form Submission
         [HttpPost]
+        [Authorize(Users = "author@blog.com")]
         public ActionResult Create(Post post)
         {
             post.Date = DateTime.Now;
