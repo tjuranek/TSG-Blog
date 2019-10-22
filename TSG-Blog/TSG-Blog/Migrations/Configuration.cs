@@ -9,8 +9,7 @@ namespace TSG_Blog.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
-            ContextKey = "TSG_Blog.Models.ApplicationDbContext";
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(TSG_Blog.Models.ApplicationDbContext context)

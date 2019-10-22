@@ -3,10 +3,21 @@ namespace TSG_Blog.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class init : DbMigration
     {
         public override void Up()
         {
+            CreateTable(
+                "dbo.Posts",
+                c => new
+                    {
+                        PostId = c.Int(nullable: false, identity: true),
+                        Title = c.String(),
+                        Date = c.DateTime(nullable: false),
+                        HtmlContent = c.String(),
+                    })
+                .PrimaryKey(t => t.PostId);
+            
             CreateTable(
                 "dbo.AspNetRoles",
                 c => new
@@ -94,6 +105,7 @@ namespace TSG_Blog.Migrations
             DropTable("dbo.AspNetUsers");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
+            DropTable("dbo.Posts");
         }
     }
 }

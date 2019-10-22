@@ -8,15 +8,19 @@
 
         @foreach (var post in Model)
         {
-            <div class="col-12">
-                <div class="card">
-                    <h5 class="card-header">@post.Title - </h5>
-                    <div class="card-body">
-                        <p class="card-text">@post.Content</p>
-                        <p>@post.Date</p>
-                    </div>
+           
+        <div class="col-12">
+            <div class="card">
+                <h5 class="card-header">@post.Title - </h5>
+                <div class="card-body">
+                    @Html.Raw(@post.HtmlContent)
+                    <p>@post.Date</p>
                 </div>
             </div>
+        </div>
+            
+
+            
         }
 
     </div>
