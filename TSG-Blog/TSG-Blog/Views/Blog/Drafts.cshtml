@@ -1,0 +1,25 @@
+﻿@model List<TSG_Blog.Models.Post>
+
+@{
+    ViewBag.Title = "Drafts";
+}
+
+<h2>Drafts</h2>
+<hr />
+
+@foreach (var post in @Model)
+{
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <h5 class="card-header">@post.Title - </h5>
+                <div class="card-body">
+                    @Html.Raw(@post.HtmlContent)
+                    <p>@post.Date</p>
+                    @Html.ActionLink("Submit", "GoLive", "Blog", new { postId = @post.PostId }, null)
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

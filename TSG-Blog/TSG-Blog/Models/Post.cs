@@ -17,5 +17,7 @@ namespace TSG_Blog.Models
 
         [AllowHtml]
         public string HtmlContent { get; set; }
+
+        public bool IsDraft { get; set; }
     }
 }
